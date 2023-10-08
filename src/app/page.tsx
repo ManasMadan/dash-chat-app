@@ -10,7 +10,6 @@ import { useRef } from "react";
 
 export default function Home() {
   const nameRef = useRef<any>(null);
-  const yValue = 75;
 
   return (
     <>
@@ -30,7 +29,7 @@ export default function Home() {
           <Link
             href="https://www.github.com/ManasMadan"
             target="_blank"
-            className={`underline translate-y-[-${yValue.toString()}px] transition-transform`}
+            className={`underline translate-y-[-75px] transition-transform`}
             ref={nameRef}
           >
             Manas Madan
@@ -74,7 +73,7 @@ export default function Home() {
             ></path>
           </svg>
         </div>
-        <Cursor yValue={yValue} forwardRef={nameRef} />
+        <Cursor yValue={75} forwardRef={nameRef} />
       </main>
     </>
   );
