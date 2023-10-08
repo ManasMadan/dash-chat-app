@@ -13,7 +13,7 @@ const config: Config = {
       themes: {
         light: {
           colors: {
-            background: "#111",
+            background: "#151934",
             foreground: "#ffffff",
             focus: "#9ca3af",
             divider: "#9ca3af",
