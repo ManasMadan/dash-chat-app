@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export default function Navbar() {
   return (
     <header className="flex justify-between items-center mt-4">
-      <h1 className="text-5xl">
+      <h1 className="text-3xl sm:text-5xl">
         <Image
           src="/logo.svg"
           width="75"
@@ -17,7 +17,7 @@ export default function Navbar() {
       </h1>
       <Link
         href="/"
-        className="bg-primary-500 px-4 py-3 rounded-3xl flex gap-3 items-center h-fit hover:bg-transparent hover:text-primary-500 transition-colors border-2 border-transparent hover:border-primary-500"
+        className="text-sm sm:text-lg bg-primary-500 px-2 sm:px-4 py-3 rounded-full flex sm:gap-3 items-center h-fit hover:bg-transparent hover:text-primary-500 transition-colors border-2 border-transparent hover:border-primary-500 mr-2"
       >
         Get Started
         <ArrowRight />
