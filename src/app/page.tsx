@@ -3,7 +3,7 @@ import Cursor from "@/components/Cursor";
 import GridBackground from "@/components/GridBackground";
 import Navbar from "@/components/Navbar";
 import styles from "@/styles/landingpage.module.css";
-import { cn } from "@/utils/tailwind-utils";
+import { cn } from "@/lib/utils/tailwind-utils";
 import { Heart } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";

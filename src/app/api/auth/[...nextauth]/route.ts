@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { SupabaseAdapter } from "@auth/supabase-adapter";
+import { PlanetScaleAdapter } from "@/lib/auth/PlanetScaleAdapter";
+import { db } from "@/db/db";
+import { Adapter } from "next-auth/adapters";
 
 const handler = NextAuth({
   providers: [
@@ -9,10 +11,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-  adapter: SupabaseAdapter({
-    url: process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    secret: process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  }),
+  adapter: PlanetScaleAdapter(db) as Adapter,
 });
 
 export { handler as GET, handler as POST };
