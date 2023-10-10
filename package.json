@@ -14,10 +14,8 @@
   "dependencies": {
     "@auth/core": "^0.16.1",
     "@auth/drizzle-adapter": "^0.3.3",
-    "@auth/supabase-adapter": "^0.1.4",
     "@nextui-org/react": "^2.1.13",
     "@planetscale/database": "^1.11.0",
-    "@supabase/supabase-js": "^2.38.0",
     "clsx": "^2.0.0",
     "dotenv": "^16.3.1",
     "drizzle-orm": "^0.28.6",
