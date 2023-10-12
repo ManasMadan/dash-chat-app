@@ -26,7 +26,9 @@
     "next-auth": "^4.23.2",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^1.14.0"
+    "socket.io-client": "^4.7.2",
+    "tailwind-merge": "^1.14.0",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^20",
