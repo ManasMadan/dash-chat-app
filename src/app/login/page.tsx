@@ -13,7 +13,7 @@ const Login: React.FC<Props> = (props) => {
   } else if (status == "authenticated") {
     redirect("/app");
   }
-  signIn("", { callbackUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/app` });
+  signIn("", { callbackUrl: "/app" });
 };
 
 export default Login;
