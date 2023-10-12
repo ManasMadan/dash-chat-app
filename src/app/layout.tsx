@@ -6,11 +6,11 @@ import { Poppins } from "next/font/google";
 
 const poppins = Poppins({ weight: "500", subsets: ["latin"] });
 
-export default function RootLayout({
-  children,
-}: {
+interface Props {
   children: React.ReactNode;
-}) {
+}
+
+const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
       <body className={poppins.className}>
@@ -20,4 +20,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

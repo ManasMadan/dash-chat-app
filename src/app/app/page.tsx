@@ -1,5 +1,7 @@
-import React from "react";
+interface Props {}
 
-export default async function App() {
+const Page: React.FC<Props> = (props) => {
   return <div>App</div>;
-}
+};
+
+export default Page;

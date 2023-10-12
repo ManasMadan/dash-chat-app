@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { useState, useEffect, RefObject } from "react";
 
-const Cursor = ({
-  forwardRef,
-  yValue,
-}: {
+interface Props {
   forwardRef: RefObject<any>;
   yValue: number;
-}) => {
+}
+
+const Cursor: React.FC<Props> = ({ forwardRef, yValue }) => {
   const [cursorPosition, setCursorPosition] = useState({
     x: -100,
     y: -100,
@@ -61,4 +60,5 @@ const Cursor = ({
     />
   );
 };
+
 export default Cursor;

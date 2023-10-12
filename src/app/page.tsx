@@ -8,7 +8,9 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 
-export default function Home() {
+interface Props {}
+
+const Home: React.FC<Props> = () => {
   const nameRef = useRef<any>(null);
 
   return (
@@ -77,4 +79,6 @@ export default function Home() {
       </main>
     </>
   );
-}
+};
+
+export default Home;

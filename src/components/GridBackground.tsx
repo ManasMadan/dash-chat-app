@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
-export default function GridBackground() {
+interface Props {}
+
+const GridBackground: React.FC<Props> = (props) => {
   return (
     <>
       <div className="fixed inset-0 transition-color delay-100 duration-700 opacity-25 bg-primary-300" />
@@ -22,4 +24,6 @@ export default function GridBackground() {
       />
     </>
   );
-}
+};
+
+export default GridBackground;

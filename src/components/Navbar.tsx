@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ArrowRight } from "lucide-react";
-export default function Navbar() {
+
+interface Props {}
+
+const Navbar: React.FC<Props> = (props) => {
   return (
     <header className="flex justify-between items-center mt-4">
       <h1 className="text-3xl sm:text-5xl">
@@ -24,4 +27,6 @@ export default function Navbar() {
       </Link>
     </header>
   );
-}
+};
+
+export default Navbar;
