@@ -13,7 +13,7 @@ const Navbar: React.FC<Props> = (props) => {
           src="/logo.svg"
           width="75"
           height="75"
-          alt=""
+          alt="dash logo"
           className="inline-block"
         />
         dash

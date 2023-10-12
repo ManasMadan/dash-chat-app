@@ -13,11 +13,11 @@ interface Props {
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        <SessionProvider>
+      <SessionProvider>
+        <body className={poppins.className}>
           <NextUIProvider>{children}</NextUIProvider>
-        </SessionProvider>
-      </body>
+        </body>
+      </SessionProvider>
     </html>
   );
 };

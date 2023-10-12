@@ -26,7 +26,7 @@ const Settings: React.FC<Props> = (props) => {
   return (
     <div className="flex flex-col justify-between h-full py-4 items-center border-r-1 border-slate-600">
       <Link href="/app" className="flex flex-col items-center gap-2">
-        <Image src="/logo.svg" width="75" height="75" alt="" />
+        <Image src="/logo.svg" width="75" height="75" alt="dash logo" />
         <div
           className="rotate-180 select-none"
           style={{ writingMode: "vertical-lr" }}
@@ -47,7 +47,11 @@ const Settings: React.FC<Props> = (props) => {
           />
         </DropdownTrigger>
         <DropdownMenu aria-label="Profile Actions" variant="flat">
-          <DropdownItem key="profile" className="h-14 gap-2">
+          <DropdownItem
+            key="profile"
+            className="h-14 gap-2"
+            textValue={`Signed in as ${email}`}
+          >
             <p className="font-semibold">Signed in as</p>
             <p className="font-semibold">{email}</p>
           </DropdownItem>
