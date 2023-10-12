@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "ef2783e1-88e5-47ae-8c88-b759bec351e0",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "cb1057eb-d24b-444a-acf8-66c99b83653a",
+  "prevId": "09c859e9-0376-4fef-a4de-6a86d6e5a8f5",
   "tables": {
     "accounts": {
       "name": "accounts",
@@ -245,7 +245,7 @@
           "name": "name",
           "type": "varchar(255)",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "created_at": {
@@ -263,6 +263,13 @@
           "notNull": true,
           "autoincrement": false,
           "default": "(now())"
+        },
+        "type": {
+          "name": "type",
+          "type": "enum('ONE_TO_ONE','GROUP')",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
         }
       },
       "indexes": {},
@@ -304,6 +311,14 @@
         },
         "joined_at": {
           "name": "joined_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "left_at": {
+          "name": "left_at",
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,

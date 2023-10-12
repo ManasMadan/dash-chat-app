@@ -36,3 +36,25 @@ CREATE TABLE `verificationToken` (
 	`expires` timestamp NOT NULL,
 	CONSTRAINT `verificationToken_identifier_token` PRIMARY KEY(`identifier`,`token`)
 );
+--> statement-breakpoint
+CREATE TABLE `conversations` (
+	`id` varchar(255) NOT NULL,
+	`name` varchar(255) NOT NULL,
+	`created_at` timestamp NOT NULL DEFAULT (now()),
+	`updated_at` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `conversations_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `conversation_users` (
+	`conversation_id` varchar(255) NOT NULL,
+	`user_id` varchar(255) NOT NULL,
+	`role` enum('PENDING','MEMBER','ADMIN') NOT NULL DEFAULT 'PENDING',
+	`joined_at` timestamp,
+	CONSTRAINT `conversation_users_conversation_id` PRIMARY KEY(`conversation_id`)
+);
+--> statement-breakpoint
+CREATE TABLE `openai_api_keys` (
+	`user_id` varchar(255) NOT NULL,
+	`api_key` varchar(255) NOT NULL,
+	CONSTRAINT `openai_api_keys_user_id` PRIMARY KEY(`user_id`)
+);
