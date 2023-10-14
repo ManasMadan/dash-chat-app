@@ -24,7 +24,7 @@ const Settings: React.FC<Props> = (props) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col justify-between h-full py-4 items-center border-r-1 border-slate-600">
+    <div className="flex flex-col justify-between h-full py-4 items-center">
       <Link href="/app" className="flex flex-col items-center gap-2">
         <Image src="/logo.svg" width="75" height="75" alt="dash logo" />
         <div
@@ -34,7 +34,7 @@ const Settings: React.FC<Props> = (props) => {
           dash
         </div>
       </Link>
-      <Dropdown className="text-black" placement="bottom-end">
+      <Dropdown placement="bottom-end">
         <DropdownTrigger>
           <Avatar
             isBordered

@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils/tailwind-utils";
 import "@/styles/globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { SessionProvider } from "next-auth/react";
@@ -14,7 +15,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
       <SessionProvider>
-        <body className={poppins.className}>
+        <body className={cn(poppins.className, "dark")}>
           <NextUIProvider>{children}</NextUIProvider>
         </body>
       </SessionProvider>
