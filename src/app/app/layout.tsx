@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
 interface Props {
-  settings: React.ReactElement;
+  settings: React.ReactNode;
   conversations: React.ReactNode;
   messages: React.ReactNode;
   children: React.ReactNode;

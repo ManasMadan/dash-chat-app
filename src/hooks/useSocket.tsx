@@ -1,14 +1,9 @@
+import { useSocketStore } from "@/lib/store";
 import { useEffect } from "react";
 import { io } from "socket.io-client";
-import { create } from "zustand";
-
-const useStore = create((set) => ({
-  socket: null,
-  set: (value: any) => set(() => ({ socket: value })),
-}));
 
 const useSocket = (url: string) => {
-  const { socket, set }: any = useStore();
+  const { socket, set } = useSocketStore();
 
   useEffect(() => {
     if (socket) return;
