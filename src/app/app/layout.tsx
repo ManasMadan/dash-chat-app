@@ -4,7 +4,7 @@ import FullPageLoading from "@/components/FullPageLoading";
 import useSocket from "@/hooks/useSocket";
 import { signIn, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 interface Props {
   settings: React.ReactElement;
@@ -20,14 +20,12 @@ const AuthenticatedRoutesLayout: React.FC<Props> = ({
   children,
 }) => {
   const { data, status } = useSession();
-  const [sentEmailtoSocket, setSentEmailtoSocket] = useState(false);
   const path = usePathname();
   const socket = useSocket(process.env.NEXT_PUBLIC_BACKEND_URL!);
 
   useEffect(() => {
-    if (socket && data && !sentEmailtoSocket) {
+    if (socket && data) {
       socket.emit("captureuserdetails", data.user.id);
-      setSentEmailtoSocket(true);
     }
   }, [socket, data]);
 

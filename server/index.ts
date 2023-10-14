@@ -19,7 +19,8 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("Disconnected " + socket.id);
   });
-  socket.on("captureuserdetails", (userid) => {
+  socket.once("captureuserdetails", (userid) => {
+    // Also Handle One User multiple socket connections
     if (userid == null) {
       socket.disconnect();
     }
