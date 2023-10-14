@@ -1,7 +1,9 @@
+import MessagesComponent from "@/components/MessagesComponent";
+
 interface Props {}
 
 const Messages: React.FC<Props> = (props) => {
-  return <div>Messages</div>;
+  return <MessagesComponent />;
 };
 
 export default Messages;

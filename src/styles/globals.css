@@ -15,3 +15,27 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.custom-scrollbar {
+  --scrollbar-track: #071627;
+  --scrollbar-color: #071627;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-track);
+}
+.custom-scrollbar:hover {
+  --scrollbar-color: #525a68;
+}
+
+/* Chrome, Edge, and Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 10px;
+}
