@@ -39,9 +39,10 @@ CREATE TABLE `verificationToken` (
 --> statement-breakpoint
 CREATE TABLE `conversations` (
 	`id` varchar(255) NOT NULL,
-	`name` varchar(255) NOT NULL,
+	`name` varchar(255),
 	`created_at` timestamp NOT NULL DEFAULT (now()),
 	`updated_at` timestamp NOT NULL DEFAULT (now()),
+	`type` enum('ONE_TO_ONE','GROUP') NOT NULL,
 	CONSTRAINT `conversations_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
@@ -49,7 +50,8 @@ CREATE TABLE `conversation_users` (
 	`conversation_id` varchar(255) NOT NULL,
 	`user_id` varchar(255) NOT NULL,
 	`role` enum('PENDING','MEMBER','ADMIN') NOT NULL DEFAULT 'PENDING',
-	`joined_at` timestamp,
+	`joined_at` timestamp NOT NULL DEFAULT (now()),
+	`left_at` timestamp,
 	CONSTRAINT `conversation_users_conversation_id` PRIMARY KEY(`conversation_id`)
 );
 --> statement-breakpoint
@@ -58,3 +60,10 @@ CREATE TABLE `openai_api_keys` (
 	`api_key` varchar(255) NOT NULL,
 	CONSTRAINT `openai_api_keys_user_id` PRIMARY KEY(`user_id`)
 );
+--> statement-breakpoint
+CREATE INDEX `id_idx` ON `users` (`id`);--> statement-breakpoint
+CREATE INDEX `email_idx` ON `users` (`email`);--> statement-breakpoint
+CREATE INDEX `id_idx` ON `conversations` (`id`);--> statement-breakpoint
+CREATE INDEX `conversation_id_idx` ON `conversation_users` (`conversation_id`);--> statement-breakpoint
+CREATE INDEX `user_id_idx` ON `conversation_users` (`user_id`);--> statement-breakpoint
+CREATE INDEX `user_id_idx` ON `openai_api_keys` (`user_id`);

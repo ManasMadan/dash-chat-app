@@ -5,16 +5,26 @@ import {
   primaryKey,
   varchar,
   text,
+  index,
 } from "drizzle-orm/mysql-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 
-export const users = mysqlTable("users", {
-  id: varchar("id", { length: 255 }).notNull().primaryKey(),
-  name: varchar("name", { length: 255 }),
-  email: varchar("email", { length: 255 }).notNull(),
-  emailVerified: timestamp("emailVerified", { mode: "date" }),
-  image: varchar("image", { length: 255 }),
-});
+export const users = mysqlTable(
+  "users",
+  {
+    id: varchar("id", { length: 255 }).notNull().primaryKey(),
+    name: varchar("name", { length: 255 }),
+    email: varchar("email", { length: 255 }).notNull(),
+    emailVerified: timestamp("emailVerified", { mode: "date" }),
+    image: varchar("image", { length: 255 }),
+  },
+  (table) => {
+    return {
+      idIdx: index("id_idx").on(table.id),
+      emailIdx: index("email_idx").on(table.email),
+    };
+  }
+);
 
 export const accounts = mysqlTable(
   "accounts",
