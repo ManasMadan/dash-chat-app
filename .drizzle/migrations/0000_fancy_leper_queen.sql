@@ -40,8 +40,8 @@ CREATE TABLE `verificationToken` (
 CREATE TABLE `conversations` (
 	`id` varchar(255) NOT NULL,
 	`name` varchar(255),
-	`created_at` timestamp NOT NULL DEFAULT (now()),
-	`updated_at` timestamp NOT NULL DEFAULT (now()),
+	`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`type` enum('ONE_TO_ONE','GROUP') NOT NULL,
 	CONSTRAINT `conversations_id` PRIMARY KEY(`id`)
 );
@@ -50,8 +50,9 @@ CREATE TABLE `conversation_users` (
 	`conversation_id` varchar(255) NOT NULL,
 	`user_id` varchar(255) NOT NULL,
 	`role` enum('PENDING','MEMBER','ADMIN') NOT NULL DEFAULT 'PENDING',
-	`joined_at` timestamp NOT NULL DEFAULT (now()),
+	`joined_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`left_at` timestamp,
+	`last_read` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT `conversation_users_conversation_id` PRIMARY KEY(`conversation_id`)
 );
 --> statement-breakpoint

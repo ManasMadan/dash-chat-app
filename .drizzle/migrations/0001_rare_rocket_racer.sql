@@ -1,1 +1,0 @@
-ALTER TABLE `conversations` MODIFY COLUMN `created_at` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP;

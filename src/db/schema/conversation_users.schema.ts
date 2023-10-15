@@ -21,6 +21,9 @@ export const conversation_users = mysqlTable(
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     left_at: timestamp("left_at", { mode: "date" }),
+    last_read: timestamp("last_read", { mode: "date" })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
   },
   (table) => {
     return {
