@@ -5,7 +5,7 @@ interface Props {}
 
 const Conversations: React.FC<Props> = (props) => {
   return (
-    <div className="max-h-full overflow-y-auto custom-scrollbar border-x-1 border-slate-600">
+    <div className="max-h-full overflow-y-auto custom-scrollbar border-r-1 border-slate-600">
       <SearchBar />
       <ConversationsList />
     </div>

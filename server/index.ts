@@ -1,17 +1,11 @@
-import express from "express";
 import { config } from "dotenv";
 import { createServer } from "node:http";
 import { Server } from "socket.io";
 
 config();
 
-const app = express();
-const server = createServer(app);
+const server = createServer();
 const io = new Server(server, { cors: { origin: process.env.FRONTEND_URL } });
-
-app.get("/", (req, res) => {
-  res.send("Working");
-});
 
 io.on("connection", (socket) => {
   console.log("Connected " + socket.id);
